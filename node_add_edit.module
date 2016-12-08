@@ -1,0 +1,18 @@
+<?php
+/**
+ * @file
+ * Code for the Node add/edit feature.
+ */
+
+include_once 'node_add_edit.features.inc';
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function node_add_edit_ctools_plugin_directory($owner, $plugin) {
+  if ($owner == 'ctools') {
+    return 'plugins/' . $plugin;
+  }
+
+  return NULL;
+}

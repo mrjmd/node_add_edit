@@ -1,0 +1,60 @@
+<?php
+/**
+ * @file
+ * Code for the Node add/edit feature.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function node_add_edit_install() {
+  // Add a 'last updated' field to all content types.
+  $field = array(
+    'field_name' => 'field_updated',
+    'type' => 'text',
+  );
+  field_create_field($field);
+  $types = 	node_type_get_names();
+  foreach ($types as $type) {
+    $instance = array(
+      'field_name' => 'field_updated',
+      'label' => 'Last update',
+      'entity_type' => 'node',
+      'bundle' => $type,
+    );
+
+    field_create_instance($instance);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function node_add_edit_uninstall() {
+  // Delete our 'last updated' field. This will remove all instances too.
+  field_delete_field('field_updated');
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Updates all node titles to $node->title . ' by ' . author->name.
+ *
+ * This assumes nodes already exist or dummy nodes have been auto-generated
+ * using the devel_generate module.
+ */
+function node_add_edit_update_7001() {
+  $query = db_query("SELECT nid, uid FROM {node}");
+  $records = $query->fetchAll();
+  foreach($records as $record) {
+    $node = node_load($record->nid);
+    // Set default username to Anonymous.
+    $username = t('Anonymous');
+    if ($record->uid > 0) {
+      $author = user_load($record->uid);
+      $username = $author->name;
+    }
+    $node->title = $node->title . ' by ' . $username;
+    node_save($node);
+  }
+}
