@@ -47,10 +47,10 @@ function node_add_edit_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-b126479a-f3d0-435e-97bf-b297514f487c';
+  $pane->pid = 'new-2de68f47-055e-4676-b235-7c8297dc4980';
   $pane->panel = 'middle';
-  $pane->type = 'node_form_author';
-  $pane->subtype = 'node_form_author';
+  $pane->type = 'node_add_edit_form';
+  $pane->subtype = 'node_add_edit_form';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -67,59 +67,11 @@ function node_add_edit_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'b126479a-f3d0-435e-97bf-b297514f487c';
-  $display->content['new-b126479a-f3d0-435e-97bf-b297514f487c'] = $pane;
-  $display->panels['middle'][0] = 'new-b126479a-f3d0-435e-97bf-b297514f487c';
-  $pane = new stdClass();
-  $pane->pid = 'new-3bba94d1-71c4-4520-b5d9-a85b816ef8ef';
-  $pane->panel = 'middle';
-  $pane->type = 'node_form_publishing';
-  $pane->subtype = 'node_form_publishing';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'argument_node_edit_1',
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '3bba94d1-71c4-4520-b5d9-a85b816ef8ef';
-  $display->content['new-3bba94d1-71c4-4520-b5d9-a85b816ef8ef'] = $pane;
-  $display->panels['middle'][1] = 'new-3bba94d1-71c4-4520-b5d9-a85b816ef8ef';
-  $pane = new stdClass();
-  $pane->pid = 'new-6ca1457a-5622-4a10-8398-7f22d5cb48a7';
-  $pane->panel = 'middle';
-  $pane->type = 'node_form_buttons';
-  $pane->subtype = 'node_form_buttons';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => 'argument_node_edit_1',
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '6ca1457a-5622-4a10-8398-7f22d5cb48a7';
-  $display->content['new-6ca1457a-5622-4a10-8398-7f22d5cb48a7'] = $pane;
-  $display->panels['middle'][2] = 'new-6ca1457a-5622-4a10-8398-7f22d5cb48a7';
+  $pane->uuid = '2de68f47-055e-4676-b235-7c8297dc4980';
+  $display->content['new-2de68f47-055e-4676-b235-7c8297dc4980'] = $pane;
+  $display->panels['middle'][0] = 'new-2de68f47-055e-4676-b235-7c8297dc4980';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-b126479a-f3d0-435e-97bf-b297514f487c';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_edit__panel_context_24fbe024-3dc0-4381-9122-53103c53474d'] = $handler;
 
