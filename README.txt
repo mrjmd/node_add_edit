@@ -7,7 +7,7 @@ script for modifying all node titles to contain their author information.
 
 -- REQUIREMENTS --
 
-Ctools, Panels, Features.
+Ctools, Page Manager, Panels, Features.
 
 -- INSTALLATION --
 
