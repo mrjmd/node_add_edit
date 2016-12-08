@@ -46,6 +46,13 @@ function node_add_edit_install() {
 function node_add_edit_uninstall() {
   // Delete our 'last updated' field. This will remove all instances too.
   field_delete_field('field_updated');
+
+  // Disable add/edit page manager page override.
+  $page_name = 'node_edit';
+  $page = page_manager_get_page_cache($page_name);
+  $function = ctools_plugin_get_function($page->subtask, "enable callback");
+  $function($page, TRUE);
+  menu_rebuild();
 }
 
 /**
